@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartbreak Anniversary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Shadows Into Light', cursive;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            max-width: 850px;
+            background: #e8ecf0;
+            padding: 70px 60px;
+            border-radius: 5px;
+            box-shadow: 
+                0 20px 80px rgba(0, 0, 0, 0.5),
+                inset 0 0 100px rgba(255, 255, 255, 0.3);
+            position: relative;
+            animation: fadeIn 2s ease-in, containerPulse 8s ease-in-out infinite;
+            border: 1px solid rgba(180, 180, 180, 0.5);
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 31px,
+                    rgba(150, 150, 150, 0.08) 31px,
+                    rgba(150, 150, 150, 0.08) 32px
+                );
+            transition: transform 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: scale(1.02);
+        }
+        
+        @keyframes containerPulse {
+            0%, 100% {
+                box-shadow: 
+                    0 20px 80px rgba(0, 0, 0, 0.5),
+                    inset 0 0 100px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                box-shadow: 
+                    0 25px 100px rgba(74, 124, 158, 0.6),
+                    inset 0 0 120px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sun, .moon {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .sun {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ffd89b 0%, #ff9a56 100%);
+            border-radius: 50%;
+            top: -35px;
+            right: 60px;
+            box-shadow: 0 0 40px rgba(255, 154, 86, 0.4);
+            opacity: 0.4;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        
+        .sun:hover {
+            transform: scale(1.3) rotate(180deg);
+            opacity: 0.7;
+            box-shadow: 0 0 80px rgba(255, 154, 86, 0.8);
+        }
+
+        .sun::before {
+            content: '';
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            top: -10px;
+            left: -10px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 216, 155, 0.2) 0%, transparent 70%);
+        }
+
+        .moon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #d4d4d4 0%, #a8a8a8 100%);
+            border-radius: 50%;
+            bottom: -30px;
+            left: 60px;
+            box-shadow: 0 0 30px rgba(168, 168, 168, 0.3);
+            animation-delay: 3s;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        
+        .moon:hover {
+            transform: scale(1.3) rotate(-180deg);
+            box-shadow: 0 0 60px rgba(168, 168, 168, 0.7);
+        }
+
+        .moon::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 8px;
+            left: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a7c9e;
+            font-size: 2.8em;
+            margin-bottom: 50px;
+            animation: slideDown 1.5s ease-out, titleGlow 3s ease-in-out infinite;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        h1:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 20px rgba(74, 124, 158, 0.8);
+            color: #2c5f7f;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% {
+                text-shadow: 0 0 5px rgba(74, 124, 158, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(74, 124, 158, 0.7);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .letter {
+            line-height: 2.5;
+            color: #4a7c9e;
+            font-size: 1.3em;
+            text-align: left;
+        }
+
+        .letter p {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInText 1.5s ease-in forwards;
+            position: relative;
+            padding-bottom: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .letter p:hover {
+            transform: translateX(10px);
+            background: rgba(74, 124, 158, 0.1);
+            padding-left: 25px;
+            box-shadow: -5px 0 15px rgba(74, 124, 158, 0.3);
+        }
+
+        .letter p::after {
+            content: '~';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5em;
+            color: rgba(100, 100, 100, 0.3);
+            animation: sparkle 2s infinite;
+        }
+
+        .letter p:last-child::after {
+            content: '~♥~';
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .letter p:nth-child(1) { animation-delay: 0.8s; }
+        .letter p:nth-child(2) { animation-delay: 1.2s; }
+        .letter p:nth-child(3) { animation-delay: 1.6s; }
+        .letter p:nth-child(4) { animation-delay: 2s; }
+        .letter p:nth-child(5) { animation-delay: 2.4s; }
+        .letter p:nth-child(6) { animation-delay: 2.8s; }
+        .letter p:nth-child(7) { animation-delay: 3.2s; }
+        .letter p:nth-child(8) { animation-delay: 3.6s; }
+        .letter p:nth-child(9) { animation-delay: 4s; }
+        .letter p:nth-child(10) { animation-delay: 4.4s; }
+        .letter p:nth-child(11) { animation-delay: 4.8s; }
+        .letter p:nth-child(12) { animation-delay: 5.2s; }
+        .letter p:nth-child(13) { animation-delay: 5.6s; }
+        .letter p:nth-child(14) { animation-delay: 6s; }
+        .letter p:nth-child(15) { animation-delay: 6.4s; }
+        .letter p:nth-child(16) { animation-delay: 6.8s; }
+        .letter p:nth-child(17) { animation-delay: 7.2s; }
+
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+        }
+
+        .heart {
+            position: fixed;
+            color: white;
+            font-size: 24px;
+            animation: heartFall 8s linear infinite;
+            pointer-events: none;
+            opacity: 0.8;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes heartFall {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(50vh) rotate(180deg) scale(1.5);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+        
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            border-radius: 50%;
+            animation: particleFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.3;
+            }
+            25% {
+                transform: translate(100px, -100px) scale(1.5);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translate(0, -200px) scale(1);
+                opacity: 0.3;
+            }
+            75% {
+                transform: translate(-100px, -100px) scale(1.5);
+                opacity: 0.7;
+            }
+        }
+
+        /* Modal inicial */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .modal-content {
+            background: #e8ecf0;
+            padding: 50px 40px;
+            border-radius: 15px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 80px rgba(74, 124, 158, 0.8);
+            animation: slideDown 1s ease-out;
+        }
+        
+        .modal-content h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #4a7c9e;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+        }
+        
+        .modal-content p {
+            color: #4a7c9e;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .accept-btn {
+            background: linear-gradient(135deg, #4a7c9e 0%, #2c5f7f 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3em;
+            font-family: 'Dancing Script', cursive;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(74, 124, 158, 0.4);
+        }
+        
+        .accept-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(74, 124, 158, 0.6);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        /* Galeria de fotos */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 50px 0;
+            padding: 30px 0;
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 15px;
+            padding-bottom: 60px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: rotate(0deg);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeInPhoto 1s ease-in forwards;
+        }
+        
+        .polaroid:active {
+            transform: scale(0.95);
+        }
+        
+        .polaroid:nth-child(odd) {
+            transform: rotate(-3deg);
+        }
+        
+        .polaroid:nth-child(even) {
+            transform: rotate(3deg);
+        }
+        
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+        
+        .polaroid img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        @keyframes fadeInPhoto {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Efeito de revelar ao rolar */
+        .letter p {
+            margin-bottom: 40px;
+            opacity: 0;
+            position: relative;
+            padding-bottom: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 8px;
+            transform: translateY(30px);
+        }
+        
+        .letter p.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        /* Contador de tempo */
+        .time-counter {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(74, 124, 158, 0.1);
+            border-radius: 15px;
+            animation: fadeInText 2s ease-in forwards;
+        }
+        
+        .time-counter h3 {
+            font-family: 'Dancing Script', cursive;
+            color: #4a7c9e;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .time-counter .counter-display {
+            font-size: 2.5em;
+            color: #2c5f7f;
+            font-weight: bold;
+            font-family: 'Shadows Into Light', cursive;
+        }
+        
+        /* Assinatura */
+        .signature {
+            text-align: right;
+            margin-top: 60px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            color: #4a7c9e;
+            animation: signatureWrite 2s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .signature.revealed {
+            opacity: 1;
+        }
+        
+        @keyframes signatureWrite {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Botão final */
+        .final-message {
+            text-align: center;
+            margin-top: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .final-message.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 1s ease;
+        }
+        
+        .final-btn {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #2c3e50;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.5em;
+            font-family: 'Dancing Script', cursive;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 154, 158, 0.4);
+            margin-top: 20px;
+        }
+        
+        .final-btn:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 8px 30px rgba(255, 154, 158, 0.6);
+        }
+        
+        /* Controle de música */
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(74, 124, 158, 0.9);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .music-control:hover {
+            transform: scale(1.1);
+            background: rgba(74, 124, 158, 1);
+        }
+        
+        /* Modal de foto ampliada */
+        .photo-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        .photo-modal.active {
+            display: flex;
+        }
+        
+        .photo-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+            animation: zoomIn 0.4s ease-out;
+        }
+        
+        .close-photo {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+        }
+        
+        .close-photo:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(90deg) scale(1.1);
+        }
+        
+        .close-photo::before,
+        .close-photo::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            background: white;
+        }
+        
+        .close-photo::before {
+            transform: rotate(45deg);
+        }
+        
+        .close-photo::after {
+            transform: rotate(-45deg);
+        }
+        
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Esconder partículas quando modal está ativo */
+        body.modal-active .heart,
+        body.modal-active .particle,
+        body.modal-active .star {
+            display: none;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .letter {
+                font-size: 1.1em;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+            
+            .polaroid img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modal Inicial -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <h2>♥ Antes de Começar ♥</h2>
+            <p>Esta carta contém todos os sentimentos que guardei por você.</p>
+            <p>Ao aceitar ler, você estará aceitando meu amor, meu carinho e tudo que sinto por você.</p>
+            <p>Você aceita?</p>
+            <button class="accept-btn" onclick="acceptLetter()">Aceito ler esta carta ♥</button>
+        </div>
+    </div>
+    
+    <!-- Áudio de fundo -->
+    <audio id="backgroundMusic" loop>
+        <source src="mus.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Controle de música -->
+    <button class="music-control" id="musicControl" onclick="toggleMusic()">🎵 Pausar</button>
+    
+    <!-- Modal de foto ampliada -->
+    <div class="photo-modal" id="photoModal" onclick="closePhotoModal(event)">
+        <div class="close-photo" onclick="closePhotoModal(event)"></div>
+        <img id="modalImage" src="" alt="Foto ampliada">
+    </div>
+    
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <div class="sun"></div>
+        <div class="moon"></div>
+        
+        <h1>Minha, querida, Mi, princesa</h1>
+        
+        <!-- Contador de tempo -->
+        <div class="time-counter">
+            <h3>Memórias sendo colecionadas há</h3>
+            <div class="counter-display" id="timeCounter">Carregando...</div>
+        </div>
+        
+        <div class="letter">
+            <p>Não quero em outras bocas encontrar algo que conheci com você. E escolho não procurar, porque é você que eu quero.</p>
+            
+            <p>Desde o dia que te conheci, sonhei que seríamos para sempre. Hoje, não é mais um sonho - é minha decisão. Vou transformar nossos medos em coragem para reconstruir o que temos.</p>
+            
+            <p>Ainda tenho suas coisas aqui, e elas não são apenas lembranças - são promessas de um futuro que vou lutar para construir. Você nunca saiu da minha cabeça, e agora escolho te trazer de volta para minha vida.</p>
+            
+            <p>Quando nos afastamos, tudo ficou gelado. Mas hoje eu sei - não quero mais seguir em frente sem você. Quero voltar, quero reconstruir, quero nos dar uma nova chance.</p>
+            
+            <p>Vamos construir nossas esperanças novamente, e dessa vez vou superar todas as dificuldades com você ao meu lado. Não quero superar o gosto dos seus lábios - quero senti-los de novo.</p>
+            
+            <p>Me lembro de quando éramos só eu e você e o tempo parava. E escolho criar novos momentos assim, porque nosso melhor ainda está por vir.</p>
+            
+            <p>Sinto sua falta do lado da cama, e não quero mais essa cama vazia. Quero acordar com você de novo, construir nossos dias juntos.</p>
+            
+            <p>Com você conheci o que é me sentir amado e descobri minha capacidade de amar. Não vou mais prender você só dentro de mim - quero você aqui, real, presente, ao meu lado todos os dias.</p>
+            
+            <p>Não quero mais seguir em frente sem você. Quero que seu toque me deixe acordado de novo, quero que seu olhar me ajude a ser uma pessoa melhor. Escolho confrontar meu passado para construir nosso futuro.</p>
+            
+            <p>Me preocupo com você todos os dias, e agora escolho estar presente para acolher tudo que você sente. Vamos enfrentar nossos medos juntos, porque não quero mais seguir sem você.</p>
+            
+            <p>Estivemos cheios de amor, dormimos juntos, fizemos loucuras, construímos um lar. E quero tudo isso de novo. Você mora em mim, e eu quero morar na sua vida também.</p>
+            
+            <p>Já me decidi - escolho você. Lembro de tudo que te prometi sorrindo e chorando, e hoje faço novas promessas: vou ser melhor, vou lutar por nós, vou te amar todos os dias.</p>
+            
+            <p>Não quero mais te segurar apenas nas lembranças - quero te impulsionar para sermos nosso melhor juntos. Cada momento ao seu lado tem sentido, e vou criar milhares de novos momentos com você.</p>
+            
+            <p>Não chore. Só tenho uma vida e escolho te amar nela todos os dias. É nessa vida que vou te levar no Clube 6 de novo, é nessa vida que vou te entregar flores sempre que puder.</p>
+            
+            <p>O que senti não mudou desde aquele halloween - só cresceu. Meu coração escolheu te amar e te proteger, minha alma escolheu dançar com a sua, meu destino é caminhar ao seu lado, sempre.</p>
+            
+            <p>Esta carta é um convite para recomeçarmos. Não aceito que seja o fim - escolho que seja um novo começo. Vamos fazer dar certo juntos, melhor do que antes. Dia após dia vou te ouvir, acolher seus sentimentos, estar presente de verdade.</p>
+            
+            <p>Fazem hoje 3 anos que nos escolhemos pela primeira vez. Hoje, te escolho de novo. Não é um fim - é nosso recomeço. Feliz aniversário do nosso amor, Mi. Vamos escrever os próximos capítulos juntos.</p>
+        </div>
+        
+        <!-- Galeria de Fotos -->
+        <div class="photo-gallery" id="photoGallery"></div>
+        
+        <!-- Assinatura -->
+        <div class="signature" id="signature">
+            Com todo meu amor,<br>
+            Seu eterno admirador ♥
+        </div>
+        
+        <!-- Mensagem Final -->
+        <div class="final-message" id="finalMessage">
+            <p style="font-size: 1.3em; color: #4a7c9e; margin-bottom: 20px;">E então, você aceita este convite?</p>
+            <button class="final-btn" onclick="respondLetter()">💕 Aceito fazer dar certo com você 💕</button>
+        </div>
+    </div>
+
+    <script>
+        // Data de início do relacionamento
+        const startDate = new Date('2023-07-17T00:00:00');
+        
+        // Aceitar leitura da carta
+        function acceptLetter() {
+            const modal = document.getElementById('modalOverlay');
+            modal.style.animation = 'fadeOut 1s ease-out';
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                // Iniciar música
+                const music = document.getElementById('backgroundMusic');
+                music.play().catch(e => console.log('Autoplay bloqueado'));
+            }, 1000);
+        }
+        
+        // Controlar música
+        function toggleMusic() {
+            const music = document.getElementById('backgroundMusic');
+            const btn = document.getElementById('musicControl');
+            if (music.paused) {
+                music.play();
+                btn.textContent = '🎵 Pausar';
+            } else {
+                music.pause();
+                btn.textContent = '🎵 Tocar';
+            }
+        }
+        
+        // Resposta final
+        function respondLetter() {
+            // Explosão de corações
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => createHeart(), i * 30);
+            }
+            
+            // Mensagem de resposta
+            const finalMsg = document.getElementById('finalMessage');
+            finalMsg.innerHTML = '<h2 style="font-family: \'Dancing Script\', cursive; color: #4a7c9e; font-size: 2.5em; animation: titleGlow 2s ease-in-out infinite;">♥ Obrigado por aceitar ♥</h2><p style="font-size: 1.3em; color: #4a7c9e; margin-top: 20px;">Vamos fazer dar certo, juntos, como sempre fizemos ♥</p>';
+        }
+        
+        // Atualizar contador de tempo
+        function updateTimeCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const years = Math.floor(days / 365);
+            const months = Math.floor((days % 365) / 30);
+            const remainingDays = days % 30;
+            
+            const counter = document.getElementById('timeCounter');
+            counter.innerHTML = `${years} anos, ${months} meses e ${remainingDays} dias`;
+        }
+        
+        // Atualizar contador a cada segundo
+        updateTimeCounter();
+        setInterval(updateTimeCounter, 1000);
+        
+        // Carregar fotos da pasta roll
+        function loadPhotos() {
+            const gallery = document.getElementById('photoGallery');
+            
+            // Lista de todas as fotos na pasta roll (apenas imagens, sem vídeos)
+            const photos = [
+                '1676839850632.jpg',
+                '1676839859282.jpg',
+                '20230502_191745.jpg',
+                '20230817_220341.jpg',
+                '20230831_213852.jpg',
+                '20230917_174010.jpg',
+                '20230917_174015.jpg',
+                '20230923_225724.jpg',
+                '20231002_205950.jpg',
+                '20231007_180930.jpg',
+                '20231007_182409.jpg',
+                '20231007_182534.jpg',
+                '20231007_182748.jpg',
+                '20231019_171427.jpg',
+                '20231019_171440.jpg',
+                '20231021_180454.jpg',
+                '20231102_183430.jpg',
+                '20231102_183444.jpg',
+                '20231102_214213.jpg',
+                '20231119_120047.jpg',
+                '20231119_163358.jpg',
+                '20231201_235439.jpg',
+                '20240102_135608.jpg',
+                '20240104_225327.jpg',
+                '20240105_162119.jpg',
+                '20240107_134908.jpg',
+                '20240203_135750.jpg',
+                '20240221_072816.jpg',
+                '20240222_171422.jpg',
+                '20240228_224718.jpg',
+                '20240802_202340.jpg',
+                '296F8CF5-8712-47E8-9213-A6C23F21028D.jpg',
+                '344405E6-9FE6-4C6D-87D5-A3A4F7252412.jpg',
+                '351BB91B-3D96-4F34-A2B3-B14FAEAE0FD5.jpg',
+                '3F1FDA39-0E32-47DB-B424-91EBF0E5A050.jpg',
+                '4D32453A-A7FB-4551-8E63-583FAB2E7268.jpg',
+                '5073F404-B850-45E5-87DE-BDABFD04BA6E.jpg',
+                '50D0FAFD-EFE7-410F-BDEF-D572FBD94BE9.jpg',
+                '527F8AE8-F364-46FB-B574-3DC03795B286.jpg',
+                '54A8FD21-C45A-416F-9C92-BC9D987731B4.jpg',
+                '593C4588-5969-4F4A-9BCD-D16AEA183535.jpg',
+                '5E0F9DE2-9661-4E51-A119-D9C107A12336.jpg',
+                '64B93B88-3E81-4598-815B-C423237E2748.jpg',
+                '66254699-186B-4428-B1F9-46F7BC03D6A4.JPG',
+                '7474CFD5-1B6B-4EE1-A93B-74E736F47EC0.jpg',
+                '83ABEBD7-D8AF-4EA8-A975-E5638A08B4C7.jpg',
+                '98FA0C3A-6FCE-406D-9623-022FBCC9D297.JPG',
+                'A5B9394C-345B-46C9-9AA6-527CFCAC2C16.jpg',
+                'A9FE262F-7C43-41DA-ADF1-079FCC3124D3.jpg',
+                'ba56e513-e929-472a-8913-ee3ca786757a.jpg',
+                'C110A4B7-113E-44DD-B2F6-DE7D2E1517FC.jpg',
+                'C129458D-83C1-4E2C-AA52-D3CF110411FB.JPG',
+                'C183FC78-DF0E-4EE5-B601-041C17EE7A1F.jpg',
+                'CCD24230-4DF3-4986-909C-8D4372E10139.JPG',
+                'IMG-20230410-WA0017.jpeg',
+                'IMG-20230521-WA0117.jpg',
+                'IMG-20230716-WA0118.jpg',
+                'IMG-20240330-WA0101.jpg',
+                'IMG-20240916-WA0043.jpeg',
+                'IMG-20240923-WA0017.jpeg',
+                'IMG_0267.jpg',
+                'IMG_0271.jpg',
+                'IMG_1234.JPG',
+                'IMG_1255.jpg',
+                'IMG_1329.JPG',
+                'IMG_1589.jpg',
+                'IMG_1594.jpg',
+                'IMG_1912.JPG',
+                'IMG_20231104_170313_261.webp',
+                'IMG_20231129_223745_631.webp',
+                'IMG_20231209_114344_670.webp',
+                'IMG_20231209_115848_800.webp',
+                'IMG_20231214_180801_535.webp',
+                'IMG_20231231_220603_003.webp',
+                'IMG_2255.PNG',
+                'IMG_2572.JPG',
+                'IMG_2643.JPG',
+                'IMG_2779.JPG',
+                'IMG_2785.JPG',
+                'IMG_2796.JPG',
+                'IMG_2993.JPG',
+                'IMG_2996.JPG',
+                'IMG_3009.JPG',
+                'IMG_3028.JPG',
+                'IMG_3045.JPG',
+                'IMG_3145.JPG',
+                'IMG_3240.JPG',
+                'IMG_3456.JPG',
+                'IMG_3480.JPG',
+                'IMG_3506.JPG',
+                'IMG_3551.JPG',
+                'IMG_3560.JPG',
+                'IMG_3695.JPG',
+                'IMG_3708.JPG',
+                'IMG_3721.JPG',
+                'IMG_3821.JPG',
+                'IMG_3865.JPG',
+                'IMG_3870.JPG',
+                'IMG_3890.PNG',
+                'IMG_4141.JPG',
+                'IMG_4519.jpg',
+                'IMG_4577.jpg',
+                'IMG_4609.PNG',
+                'IMG_4658.jpg',
+                'IMG_4712.jpg',
+                'IMG_4797.jpg',
+                'IMG_4888.jpg',
+                'IMG_4902.jpg',
+                'IMG_5021.jpg',
+                'IMG_5159.jpg',
+                'IMG_5431.jpg',
+                'IMG_5523.jpg',
+                'IMG_5713.jpg',
+                'IMG_5718.jpg',
+                'IMG_5729.jpg',
+                'IMG_5733.jpg',
+                'IMG_5923.jpg',
+                'IMG_5925.jpg',
+                'IMG_6204.jpg',
+                'IMG_6324.jpg',
+                'IMG_6509.jpg',
+                'IMG_6684.jpg',
+                'IMG_7149.jpg',
+                'IMG_7206.jpg',
+                'IMG_7235.jpg',
+                'IMG_7307.jpg',
+                'instc 2023-08-06 184730.889.jpg',
+                'VideoCapture_20230831-220407.jpg'
+            ];
+            
+            photos.forEach((photo, index) => {
+                const polaroid = document.createElement('div');
+                polaroid.className = 'polaroid';
+                polaroid.style.animationDelay = (index * 0.1) + 's';
+                
+                const img = document.createElement('img');
+                img.src = `roll/${photo}`;
+                img.onerror = function() {
+                    // Se não carregar, remover o polaroid
+                    polaroid.remove();
+                };
+                
+                // Adicionar evento de clique para ampliar foto
+                polaroid.addEventListener('click', function() {
+                    openPhotoModal(img.src);
+                });
+                
+                polaroid.appendChild(img);
+                gallery.appendChild(polaroid);
+            });
+        }
+        
+        // Abrir modal de foto ampliada
+        function openPhotoModal(imageSrc) {
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.classList.add('modal-active');
+        }
+        
+        // Fechar modal de foto
+        function closePhotoModal(event) {
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            
+            // Fechar se clicar no fundo ou no botão X
+            if (event.target === modal || event.target.classList.contains('close-photo') || event.target.parentElement.classList.contains('close-photo')) {
+                modal.classList.remove('active');
+                document.body.classList.remove('modal-active');
+            }
+        }
+        
+        // Fechar com tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('photoModal');
+                modal.classList.remove('active');
+                document.body.classList.remove('modal-active');
+            }
+        });
+        
+        // Carregar fotos ao iniciar
+        loadPhotos();
+        
+        // Efeito de revelar ao rolar
+        function revealOnScroll() {
+            const paragraphs = document.querySelectorAll('.letter p');
+            const signature = document.getElementById('signature');
+            const finalMessage = document.getElementById('finalMessage');
+            
+            paragraphs.forEach(p => {
+                const elementTop = p.getBoundingClientRect().top;
+                const elementBottom = p.getBoundingClientRect().bottom;
+                
+                if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+                    p.classList.add('revealed');
+                }
+            });
+            
+            // Revelar assinatura
+            const sigTop = signature.getBoundingClientRect().top;
+            if (sigTop < window.innerHeight - 100) {
+                signature.classList.add('revealed');
+            }
+            
+            // Revelar mensagem final
+            const finalTop = finalMessage.getBoundingClientRect().top;
+            if (finalTop < window.innerHeight - 100) {
+                finalMessage.classList.add('revealed');
+            }
+        }
+        
+        // Adicionar listener de scroll
+        window.addEventListener('scroll', revealOnScroll);
+        
+        // Revelar primeiro parágrafo ao carregar
+        setTimeout(revealOnScroll, 500);
+        
+        // Adicionar animação de fade out para o modal
+        const fadeOutStyle = document.createElement('style');
+        fadeOutStyle.textContent = `
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(fadeOutStyle);
+        
+        // Criar estrelas
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.width = (Math.random() * 3 + 1) + 'px';
+            star.style.height = star.style.width;
+            starsContainer.appendChild(star);
+        }
+        
+        // Criar partículas flutuantes coloridas
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.width = (Math.random() * 8 + 5) + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.background = `rgba(${Math.random() * 100 + 155}, ${Math.random() * 100 + 155}, 255, 0.5)`;
+            particle.style.animationDelay = Math.random() * 6 + 's';
+            particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            document.body.appendChild(particle);
+        }
+
+        // Criar corações brancos caindo
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '♥';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.top = '-50px';
+            heart.style.animationDuration = (Math.random() * 3 + 6) + 's';
+            heart.style.fontSize = (Math.random() * 10 + 20) + 'px';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        // Criar corações constantemente
+        setInterval(createHeart, 200);
+        
+        // Criar alguns corações iniciais
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createHeart, i * 150);
+        }
+        
+        // Efeito de clique no título
+        const title = document.querySelector('h1');
+        title.addEventListener('click', function() {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => createHeart(), i * 50);
+            }
+        });
+        
+        // Efeito de hover nos parágrafos - criar mini corações
+        document.querySelectorAll('.letter p').forEach(p => {
+            p.addEventListener('mouseenter', function() {
+                for (let i = 0; i < 3; i++) {
+                    const miniHeart = document.createElement('span');
+                    miniHeart.innerHTML = '♥';
+                    miniHeart.style.position = 'absolute';
+                    miniHeart.style.color = '#4a7c9e';
+                    miniHeart.style.fontSize = '14px';
+                    miniHeart.style.opacity = '1';
+                    miniHeart.style.animation = 'miniHeartFloat 1s ease-out forwards';
+                    miniHeart.style.left = (Math.random() * 50) + 'px';
+                    this.appendChild(miniHeart);
+                    
+                    setTimeout(() => miniHeart.remove(), 1000);
+                }
+            });
+        });
+        
+        // Adicionar animação de mini corações
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes miniHeartFloat {
+                0% {
+                    transform: translateY(0) scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-50px) scale(0.5);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Efeito de movimento do mouse - criar trilha de estrelas
+        let mouseTimer;
+        document.addEventListener('mousemove', function(e) {
+            clearTimeout(mouseTimer);
+            mouseTimer = setTimeout(() => {
+                const trail = document.createElement('div');
+                trail.style.position = 'fixed';
+                trail.style.left = e.clientX + 'px';
+                trail.style.top = e.clientY + 'px';
+                trail.style.width = '4px';
+                trail.style.height = '4px';
+                trail.style.background = 'rgba(255, 255, 255, 0.8)';
+                trail.style.borderRadius = '50%';
+                trail.style.pointerEvents = 'none';
+                trail.style.animation = 'trailFade 1s ease-out forwards';
+                document.body.appendChild(trail);
+                
+                setTimeout(() => trail.remove(), 1000);
+            }, 50);
+        });
+        
+        const trailStyle = document.createElement('style');
+        trailStyle.textContent = `
+            @keyframes trailFade {
+                0% {
+                    transform: scale(1);
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: scale(3);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(trailStyle);
+    </script>
+</body>
+</html>
